@@ -20,7 +20,7 @@ const projects = [
     image: "/images/projects/react-ecommerce.png",
     technologies: ["React", "React Router", "Tailwind CSS", "Vite"],
     liveLink:
-      "https://newecommerce-j116euu7t-aamir-hussains-projects-9fe176e4.vercel.app/",
+      "https://newecommerceap.netlify.app/",
   },
   {
     number: "03",
