@@ -6,10 +6,10 @@ const projects = [
     title: "Roshni Ghar",
     category: "E-commerce Website",
     description:
-      "A modern lighting e-commerce website with a Next.js frontend and WordPress-powered backend.",
+      "A modern lighting e-commerce website built with WordPress and WooCommerce, featuring an elegant shopping experience, responsive design, dynamic product listings, and a user-friendly interface..",
     image: "/images/projects/roshni-ghar.png",
     technologies: ["Next.js", "WordPress", "E-commerce"],
-    liveLink: "https://www.roshnighar.com/",
+    liveLink: "https://roshnighar.com/",
   },
   {
     number: "02",
