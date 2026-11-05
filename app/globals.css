@@ -955,6 +955,8 @@ a {
     flex-wrap: wrap;
   }
 }
+
+
 /* =========================
    PROJECTS SECTION
 ========================= */
@@ -980,18 +982,23 @@ a {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 .project-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 20px;
   background: rgba(15, 23, 42, 0.78);
   border: 1px solid rgba(37, 99, 235, 0.16);
-  transition: transform 0.4s ease,
-              border-color 0.4s ease,
-              box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .project-card:hover {
@@ -1005,9 +1012,10 @@ a {
 .project-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 17 / 12;
   overflow: hidden;
   background: #080b12;
+  flex-shrink: 0;
 }
 
 .project-image {
@@ -1055,7 +1063,7 @@ a {
   transform: translateY(0);
 }
 
-/* Number */
+/* Project Number */
 
 .project-number {
   position: absolute;
@@ -1078,29 +1086,33 @@ a {
 /* Project Content */
 
 .project-content {
-  padding: 27px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-category {
   display: inline-block;
   margin-bottom: 10px;
   color: #06b6d4;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
 .project-content h3 {
-  font-size: 24px;
+  font-size: 20px;
   color: #f8fafc;
   margin-bottom: 13px;
 }
 
 .project-content p {
   color: #94a3b8;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.85;
 }
 
 /* Technologies */
@@ -1108,15 +1120,16 @@ a {
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
+  gap: 7px;
+  margin-top: 17px;
 }
 
 .project-technologies span {
-  padding: 7px 11px;
+  padding: 7px 9px;
   border-radius: 7px;
   color: #bae6fd;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
   background: rgba(37, 99, 235, 0.09);
   border: 1px solid rgba(6, 182, 212, 0.17);
 }
@@ -1127,7 +1140,9 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  margin-top: 24px;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 20px;
   color: #38bdf8;
   font-size: 14px;
   font-weight: 600;
@@ -1146,41 +1161,37 @@ a {
   transform: translate(3px, -3px);
 }
 
-/* Make last project attractive on desktop */
-
-.project-card:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-}
-
-.project-card:last-child:nth-child(odd) .project-image-wrapper {
-  aspect-ratio: 21 / 8;
-}
-
-.project-card:last-child:nth-child(odd) .project-content {
-  max-width: 800px;
-}
-
 /* =========================
    PROJECT RESPONSIVE
 ========================= */
 
-@media (max-width: 800px) {
+/* Tablet */
+
+@media (max-width: 1000px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
   }
 
-  .project-card:last-child:nth-child(odd) {
-    grid-column: auto;
+  .project-content {
+    padding: 24px 20px;
   }
 
-  .project-card:last-child:nth-child(odd) .project-image-wrapper {
-    aspect-ratio: 16 / 9;
+  .project-content h3 {
+    font-size: 22px;
   }
 }
+
+/* Mobile */
 
 @media (max-width: 600px) {
   .projects-section {
     padding: 80px 18px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
 
   .project-content {
@@ -1191,10 +1202,17 @@ a {
     font-size: 21px;
   }
 
+  .project-content p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
   .project-overlay {
     display: none;
   }
 }
+
+
 /* =========================
    CONTACT SECTION
 ========================= */

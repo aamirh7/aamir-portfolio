@@ -52,6 +52,18 @@ const projects = [
     technologies: ["HTML5", "CSS3", "Responsive Design"],
     liveLink: "https://aamirh7.github.io/coffee-website/",
   },
+  
+{
+  number: "06",
+  title: "My Pets Co",
+  category: "Pet Care Website",
+  description:
+    "A professional pet care website developed for a UK-based client, featuring an engaging design, informative pet care guides, responsive layouts, and an easy-to-navigate user experience.",
+  image: "/images/projects/my-petsco.png",
+  technologies: ["WordPress", "Elementor", "Responsive Design"],
+  liveLink: "https://mypetsco.com/",
+},
+
 ];
 
 export default function Projects() {
